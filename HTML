@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meteo Könizstrasse</title>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --paper: #ffffff;
+    --ink: #1c2430;
+    --muted: #5d6877;
+    --line: #c9d0da;
+    --accent: #1f4e79;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181f;
+      --paper: #1b212b;
+      --ink: #e4e8ee;
+      --muted: #9aa5b4;
+      --line: #35404f;
+      --accent: #7fb2e0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Source Serif 4", "Georgia", "Times New Roman", serif;
+    line-height: 1.6;
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 1rem; margin-bottom: 2rem; }
+  h1 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; letter-spacing: -0.01em; }
+  .sub { margin: .25rem 0 0; color: var(--muted); font-size: 1.15rem; font-style: italic; }
+  figure {
+    margin: 0;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 1rem;
+  }
+  .plot {
+    min-height: 320px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px dashed var(--line);
+    color: var(--muted);
+    text-align: center;
+    padding: 1rem;
+  }
+  .plot img { max-width: 100%; height: auto; display: block; }
+  figcaption {
+    margin-top: .75rem;
+    font-size: .95rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: .6rem;
+  }
+  figcaption b { color: var(--ink); }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Meteo Könizstrasse</h1>
+    <p class="sub">Test1</p>
+  </header>
+
+  <figure>
+    <div class="plot" id="plot">
+      <img src="https://raw.githubusercontent.com/wal-man/MeteoStation/main/docs/temperature_plot.png" alt="Graphik1: Temperaturverlauf der Messstelle Könizstrasse"
+           onerror="this.remove(); document.getElementById('hint').hidden = false;">
+      <p id="hint" hidden>Graphik1 ist noch nicht eingebunden.<br>
+        Pfad: <code>docs/temperature_plot.png</code> im Repository MeteoStation.</p>
+    </div>
+    <figcaption>
+      <b>Graphik 1.</b> Temperaturverlauf der Messstelle Könizstrasse. Quelle:
+      <a href="https://github.com/wal-man/MeteoStation/blob/main/docs/temperature_plot.png">GitHub-Repository MeteoStation</a>.
+    </figcaption>
+  </figure>
+</main>
+</body>
+</html>
